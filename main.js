@@ -2,6 +2,7 @@
 
 let photo = document.getElementById('photos');
 let modal = document.querySelector('.modal');
+let mediaModal = document.querySelector('.mediaModal')
 let image = document.querySelector('.image');
 let white = document.querySelector('.white');
 let body = document.querySelector('body');
@@ -10,12 +11,26 @@ const contact = document.querySelector('.about');
 
 photo.addEventListener('click', openModal);
 
+
+
 function openModal() {
-    modal.style.display = "block";
-    image.style.position = 'unset';
-    white.style.position = 'unset';
-    body.style.overflow = 'hidden';
-    contact.style.display = 'none';
+    if (mq.matches) {
+        mqModal();
+    } else {
+        modal.style.display = "block";
+        image.style.position = 'unset';
+        white.style.position = 'unset';
+        body.style.overflow = 'hidden';
+        contact.style.display = 'none';
+    }
+}
+
+function mqModal() {
+    image.style.display = 'none'
+    mediaModal.style.display = 'block'
+    modal.style.display = 'none'
+    white.style.position = 'unset'
+    body.style.overflow = 'hidden'
 }
 
 const buttons = document.querySelectorAll("[data-carousel-button]")
@@ -59,3 +74,25 @@ aboutBtn.addEventListener('click', openContact);
 function openContact() {
     contact.style.display = 'block'
 }
+
+const mq = matchMedia("(max-width: 600px)")
+
+
+function closeMqModal() {
+    mediaModal.style.display = 'none'
+    body.style.overflow = 'scroll'
+    white.style.position = 'relative'
+    image.style.display = 'block'
+}
+
+modal.addEventListener('click', function (e) {
+    if (e.target.classList.contains('modal')) {
+        closeModal();
+    }
+});
+
+mediaModal.addEventListener('click', function (e) {
+    if (e.target.classList.contains('mediaModal')) {
+        closeMqModal();
+    }
+});

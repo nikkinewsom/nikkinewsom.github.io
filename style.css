@@ -109,7 +109,7 @@ aside ul li:hover {
 }
 
 .aboutMe p {
-    color: white;
+    color: #fffef2;
     font-size: 2rem;
 }
 
@@ -125,6 +125,10 @@ aside ul li:hover {
     margin-left: 545px;
     position: absolute;
     top: 400px;
+}
+
+.mediaModal {
+    display: none;
 }
 
 .modal {
@@ -229,4 +233,138 @@ aside ul li:hover {
 
 .carousel-button.next {
     right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+
+    }
+
+    .mediaModal {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.4);
+        display: none;
+        animation: openModal 0.5s ease forwards;
+        overflow: hidden;
+    }
+
+    .mediaCard {
+        width: 80%;
+        height: 500px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        border-radius: 12px;
+        margin-right: 25px;
+        margin-left: 37px;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        box-shadow: var(--color-primary) 0px 1px 4px;
+    }
+
+    .mediaCarousel {
+        margin-right: 40px;
+    }
+
+    .carousel-button {
+        position: absolute;
+        z-index: 2;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: rgba(255, 255, 255, .5);
+        cursor: pointer;
+        border-radius: .25rem;
+        padding: 0 .5rem;
+        background-color: rgba(0, 0, 0, .1);
+    }
+
+    .white {
+        width: 100vw;
+        height: 50vh;
+        position: relative;
+    }
+
+    .white h1 {
+        font-size: 3rem;
+
+    }
+
+    .contactMedia {
+        display: block;
+        border: 1px solid black;
+        margin-right: 300px;
+
+
+    }
+
+    .contactMedia p {
+        font-size: 1rem;
+    }
+
+    .black {
+        width: 100vw;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .image {
+        width: 55%;
+        height: 300px;
+        background: url("images/jerry-wang-1KhQCufYwr4-unsplash.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 12px;
+        position: absolute;
+        right: 90px;
+        top: 150px;
+    }
+
+    .aboutMe {
+        width: 100%;
+        height: 250px;
+        margin-top: 120px;
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aboutMe div {
+        width: 60%;
+        height: 250px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .aboutMe p {
+        font-size: 1rem;
+    }
+
+    aside {
+        margin-top: 25px;
+    }
+
+    aside ul {
+        width: 20px;
+    }
+
+    span {
+        color: #fffef2;
+    }
 }
