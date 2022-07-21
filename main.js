@@ -72,7 +72,11 @@ const aboutBtn = document.getElementById('aboutBtn');
 aboutBtn.addEventListener('click', openContact);
 
 function openContact() {
-    contact.style.display = 'block'
+    if (mq.matches) {
+        contact.style.display = 'none'
+    } else {
+        contact.style.display = 'block'
+    }
 }
 
 const mq = matchMedia("(max-width: 600px)")
